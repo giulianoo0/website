@@ -85,6 +85,8 @@ export default function Home() {
                 <a
                   key={project.name}
                   href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
                   className="block group"
                 >
                   <div className="flex items-baseline space-x-3">
@@ -119,7 +121,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hidden md:block border-l border-neutral-900 pl-12 space-y-8">
+        <div className="border-t border-neutral-900 pt-8 mt-8 md:mt-0 md:pt-0 md:border-t-0 md:border-l md:pl-12 space-y-8">
           <h2 className="text-neutral-600 text-sm font-medium mb-6">writing</h2>
           <div className="space-y-6">
             {posts.map((post) => (
