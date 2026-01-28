@@ -107,7 +107,8 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-8 mt-12">
+            <div className="hidden md:block space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-8 mt-12">
+              <p className="text-neutral-500">from Recife, Pernambuco, Brazil 🇧🇷</p>
               <p>
                 contact me at{" "}
                 <a
@@ -121,7 +122,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="border-t border-neutral-900 pt-8 mt-8 md:mt-0 md:pt-0 md:border-t-0 md:border-l md:pl-12 space-y-8">
+        <div className="border-t border-neutral-900 pt-4 md:pt-0 md:border-t-0 md:border-l md:pl-12 space-y-8">
           <h2 className="text-neutral-600 text-sm font-medium mb-6">writing</h2>
           <div className="space-y-6">
             {posts.map((post) => (
@@ -148,6 +149,18 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+          <div className="md:hidden space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-6">
+            <p className="text-neutral-500">from Recife, Pernambuco, Brazil 🇧🇷</p>
+            <p>
+              contact me at{" "}
+              <a
+                href="mailto:giuliano@netc.fr"
+                className="text-neutral-400 hover:text-white transition-colors"
+              >
+                giuliano@netc.fr
+              </a>
+            </p>
           </div>
         </div>
       </div>
