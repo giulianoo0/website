@@ -105,7 +105,7 @@ export default function BlogLayout() {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-            className="absolute bottom-0 left-0 h-[1px] bg-neutral-800"
+            className="absolute bottom-0 left-0 h-px bg-neutral-800"
           />
         </div>
       </header>
@@ -113,7 +113,7 @@ export default function BlogLayout() {
       <div className="max-w-6xl mx-auto pt-32 px-6 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-12">
         <aside className="hidden lg:block sticky top-32 self-start space-y-8">
           <div className="space-y-4 text-xs text-neutral-500">
-            {headings.length > 0 ? (
+            {headings.length > 0 &&
               headings.map((heading) => (
                 <a
                   key={heading.id}
@@ -141,13 +141,7 @@ export default function BlogLayout() {
                   ></div>
                   <span>{heading.text.toLowerCase()}</span>
                 </a>
-              ))
-            ) : (
-              <div className="flex items-center space-x-2 text-white">
-                <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                <span>intro</span>
-              </div>
-            )}
+              ))}
           </div>
         </aside>
 
