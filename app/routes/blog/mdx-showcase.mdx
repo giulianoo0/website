@@ -1,0 +1,65 @@
+import { CodeBlock } from "../../components/code-block";
+import { MdxBarChart, MdxLineChart } from "../../components/mdx-charts";
+
+# MDX Showcase
+
+This page shows what the MDX renderer supports: text, lists, tables, code blocks, and charts, styled with the Kanagawa palette.
+
+**Bold** and *italic* samples appear here to verify typography.
+
+## Highlights
+
+- Bold and italic text
+- Custom code blocks
+- Tables
+- Recharts charts
+
+## Code block (TypeScript)
+
+<CodeBlock language="ts">{`type Lang = "pt" | "en";
+
+const labels: Record<Lang, string> = {
+  pt: "Ola, mundo",
+  en: "Hello, world",
+};
+
+export function say(lang: Lang) {
+  return labels[lang];
+}`}</CodeBlock>
+
+## Feature table
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Code blocks</td>
+      <td>OK</td>
+      <td>Custom component</td>
+    </tr>
+    <tr>
+      <td>Tables</td>
+      <td>OK</td>
+      <td>Kanagawa styling</td>
+    </tr>
+    <tr>
+      <td>Charts</td>
+      <td>OK</td>
+      <td>Recharts</td>
+    </tr>
+  </tbody>
+</table>
+
+## Bar chart (Recharts)
+
+<MdxBarChart />
+
+## Line chart (Recharts)
+
+<MdxLineChart />

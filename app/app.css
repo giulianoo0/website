@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+@theme {
+  --font-geist-mono: "Geist Mono", monospace;
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ededed;
+  --kanagawa-sumi: #0f0f15;
+  --kanagawa-sumi-2: #181820;
+  --kanagawa-fuji-white: #dcd7ba;
+  --kanagawa-wave-blue: #223249;
+  --kanagawa-autumn-green: #76946a;
+  --kanagawa-autumn-red: #c34043;
+  --kanagawa-spring-blue: #7fb4ca;
+  --kanagawa-spring-green: #98bb6c;
+  --kanagawa-spring-violet: #938aa9;
+  --kanagawa-crystal-blue: #7e9cd8;
+  --kanagawa-oni-violet: #957fb8;
+  --kanagawa-carp-yellow: #e6c384;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #333;
+  color: #fff;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.shimmer-text:hover {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    currentColor 40%,
+    rgba(255, 255, 255, 1) 50%,
+    currentColor 60%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 1.5s linear infinite;
+}
+.prose pre {
+  background: var(--kanagawa-sumi-2);
+  color: var(--kanagawa-fuji-white);
+  border: 1px solid var(--kanagawa-wave-blue);
+}
+
+.prose code {
+  color: var(--kanagawa-carp-yellow);
+}
+
+.prose {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+}
+
+.prose h2 {
+  font-size: 1.6rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose h4 {
+  font-size: 1.1rem;
+}
+
+.prose h5,
+.prose h6 {
+  font-size: 1rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose table,
+.prose pre,
+.prose blockquote,
+.prose .chart-card {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin: 0.35em 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--kanagawa-sumi-2);
+  border-radius: 12px;
+  overflow: hidden;
+  display: table;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.prose thead th {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kanagawa-fuji-white);
+  background: rgba(34, 50, 73, 0.6);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--kanagawa-wave-blue);
+}
+
+.prose tbody td {
+  padding: 12px 14px;
+  border-top: 1px solid var(--kanagawa-wave-blue);
+  color: var(--kanagawa-fuji-white);
+}
+
+.prose tbody tr:hover td {
+  background: rgba(34, 50, 73, 0.3);
+}
+
+.codeblock {
+  border: 1px solid var(--kanagawa-wave-blue);
+  border-radius: 14px;
+  background: var(--kanagawa-sumi-2);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.codeblock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--kanagawa-wave-blue);
+  background: rgba(15, 15, 21, 0.8);
+}
+
+.codeblock-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--kanagawa-fuji-white);
+}
+
+.codeblock-copy {
+  border: 1px solid var(--kanagawa-wave-blue);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--kanagawa-fuji-white);
+  background: rgba(34, 50, 73, 0.5);
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.codeblock-copy:hover {
+  background: rgba(34, 50, 73, 0.9);
+  border-color: var(--kanagawa-crystal-blue);
+  color: #ffffff;
+}
+
+.codeblock-pre {
+  margin: 0;
+  padding: 18px 16px 20px;
+  background: transparent;
+  overflow-x: auto;
+}
+
+.codeblock-pre code {
+  color: var(--kanagawa-fuji-white);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.chart-card {
+  border: 1px solid var(--kanagawa-wave-blue);
+  border-radius: 14px;
+  background: var(--kanagawa-sumi);
+  padding: 12px;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+.prose strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.prose em {
+  color: var(--kanagawa-spring-violet);
+  font-style: italic;
+}
