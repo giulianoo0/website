@@ -18,6 +18,26 @@ export default function BlogLayout() {
 
   const title = slug ? titles[slug] : "";
   const date = slug ? dates[slug] : "";
+  const nameLetters = Array.from("giuliano");
+  const nameEasing: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+  const nameContainer = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+    },
+  };
+
+  const nameLetter = {
+    hidden: { opacity: 0, y: 4, filter: "blur(6px)" },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.5, ease: nameEasing },
+    },
+  };
 
   const [headings, setHeadings] = useState<{ id: string; text: string }[]>([]);
 
@@ -62,12 +82,22 @@ export default function BlogLayout() {
             className="group flex items-center gap-2"
           >
             <motion.span
-              initial={{ opacity: 0, filter: "blur(8px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="text-xs text-cyan-200 font-bold shimmer-text"
+              aria-label="giuliano"
+              variants={nameContainer}
+              initial="hidden"
+              animate="show"
+              className="text-xs text-cyan-200 font-bold shimmer-text inline-flex"
             >
-              giuliano
+              {nameLetters.map((letter, index) => (
+                <motion.span
+                  key={`${letter}-${index}`}
+                  variants={nameLetter}
+                  aria-hidden="true"
+                  className="inline-block"
+                >
+                  {letter}
+                </motion.span>
+              ))}
             </motion.span>
           </Link>
 
