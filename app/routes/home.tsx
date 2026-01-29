@@ -3,14 +3,9 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    name: "lawcore",
-    description: "AI that helps lawyers in Brazil streamline their workflow.",
-    url: "https://lawcore.com.br",
-    icon: "⚖️",
-  },
-  {
     name: "website",
-    description: "personal website and blog built with react router, mdx, and recharts.",
+    description:
+      "personal website and blog built with react router, mdx, and recharts.",
     url: "https://github.com/giulianoo0/website",
     icon: "🖥️",
   },
@@ -88,107 +83,111 @@ export default function Home() {
             </motion.span>
           </div>
 
-           <motion.div
-             initial={{ opacity: 0, filter: "blur(8px)" }}
-             animate={{ opacity: 1, filter: "blur(0px)" }}
-             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-           >
-             <div className="flex space-x-4 text-sm text-neutral-500 font-medium mb-12 mt-4">
-               <a
-                 href="https://x.com/giulian0x6f"
-                 className="hover:text-white transition-colors"
-               >
-                 X
-               </a>
-               <a
-                 href="https://github.com/giulianoo0"
-                 className="hover:text-white transition-colors"
-               >
-                 github
-               </a>
-             </div>
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+          >
+            <div className="flex space-x-4 text-sm text-neutral-500 font-medium mb-12 mt-4">
+              <a
+                href="https://x.com/giulian0x6f"
+                className="hover:text-white transition-colors"
+              >
+                X
+              </a>
+              <a
+                href="https://github.com/giulianoo0"
+                className="hover:text-white transition-colors"
+              >
+                github
+              </a>
+            </div>
 
-             <div className="space-y-8">
-               {projects.map((project) => (
-                 <a
-                   key={project.name}
-                   href={project.url}
-                   target="_blank"
-                   rel="noreferrer"
-                   className="block group"
-                 >
-                   <div className="flex items-baseline space-x-3">
-                     <span className="text-xl">{project.icon}</span>
-                     <div>
-                       <h3 className="text-white font-medium flex items-center text-lg">
-                         {project.name}
-                         <span className="ml-1 text-neutral-600 text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                           ↗
-                         </span>
-                       </h3>
-                       <p className="text-neutral-500 text-sm mt-1 max-w-md leading-relaxed">
-                         {project.description}
-                       </p>
-                     </div>
-                   </div>
-                 </a>
-               ))}
-             </div>
+            <div className="space-y-8">
+              {projects.map((project) => (
+                <a
+                  key={project.name}
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block group"
+                >
+                  <div className="flex items-baseline space-x-3">
+                    <span className="text-xl">{project.icon}</span>
+                    <div>
+                      <h3 className="text-white font-medium flex items-center text-lg">
+                        {project.name}
+                        <span className="ml-1 text-neutral-600 text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                          ↗
+                        </span>
+                      </h3>
+                      <p className="text-neutral-500 text-sm mt-1 max-w-md leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
 
-             <div className="hidden md:block space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-8 mt-12">
-               <p className="text-neutral-500">from Recife, Pernambuco, Brazil 🇧🇷</p>
-               <p>
-                 contact me at{" "}
-                 <a
-                   href="mailto:giuliano@netc.fr"
-                   className="text-neutral-400 hover:text-white transition-colors"
-                 >
-                   giuliano@netc.fr
-                 </a>
-               </p>
-             </div>
-           </motion.div>
+            <div className="hidden md:block space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-8 mt-12">
+              <p className="text-neutral-500">
+                from Recife, Pernambuco, Brazil 🇧🇷
+              </p>
+              <p>
+                contact me at{" "}
+                <a
+                  href="mailto:giuliano@netc.fr"
+                  className="text-neutral-400 hover:text-white transition-colors"
+                >
+                  giuliano@netc.fr
+                </a>
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-         <motion.div
-           initial={{ opacity: 0, filter: "blur(8px)" }}
-           animate={{ opacity: 1, filter: "blur(0px)" }}
-           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
-           className="border-t border-neutral-900 pt-4 md:pt-0 md:border-t-0 md:border-l md:pl-12 space-y-8"
-         >
-           <h2 className="text-neutral-600 text-sm font-medium mb-6">writing</h2>
-           <div className="space-y-6">
-             {posts.map((post) => (
-               <Link
-                 key={post.slug}
-                 to={`/blog/${post.slug}`}
-                 className="block group"
-               >
-                 <div className="space-y-1">
-                   <h3
-                     className="text-neutral-300 font-medium group-hover:text-cyan-200 transition-colors"
-                     style={{ fontSize: "1rem", fontWeight: 500 }}
-                   >
-                     {post.title}
-                   </h3>
-                   <p className="text-neutral-600 text-xs">{post.date}</p>
-                 </div>
-               </Link>
-             ))}
-           </div>
-           <div className="md:hidden space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-6">
-             <p className="text-neutral-500">from Recife, Pernambuco, Brazil 🇧🇷</p>
-             <p>
-               contact me at{" "}
-               <a
-                 href="mailto:giuliano@netc.fr"
-                 className="text-neutral-400 hover:text-white transition-colors"
-               >
-                 giuliano@netc.fr
-               </a>
-             </p>
-           </div>
-         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(8px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
+          className="border-t border-neutral-900 pt-4 md:pt-0 md:border-t-0 md:border-l md:pl-12 space-y-8"
+        >
+          <h2 className="text-neutral-600 text-sm font-medium mb-6">writing</h2>
+          <div className="space-y-6">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="block group"
+              >
+                <div className="space-y-1">
+                  <h3
+                    className="text-neutral-300 font-medium group-hover:text-cyan-200 transition-colors"
+                    style={{ fontSize: "1rem", fontWeight: 500 }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p className="text-neutral-600 text-xs">{post.date}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="md:hidden space-y-2 text-sm text-neutral-600 border-t border-neutral-900 pt-6">
+            <p className="text-neutral-500">
+              from Recife, Pernambuco, Brazil 🇧🇷
+            </p>
+            <p>
+              contact me at{" "}
+              <a
+                href="mailto:giuliano@netc.fr"
+                className="text-neutral-400 hover:text-white transition-colors"
+              >
+                giuliano@netc.fr
+              </a>
+            </p>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
