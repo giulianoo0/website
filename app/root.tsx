@@ -2,11 +2,12 @@ import {
   isRouteErrorResponse,
   Links,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
+  useOutlet,
 } from "react-router";
-import { LayoutGroup } from "framer-motion";
+import { LayoutGroup, AnimatePresence, motion } from "framer-motion";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -42,10 +43,31 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+function AnimatedOutlet() {
+  const location = useLocation();
+  const outlet = useOutlet();
+
+  return (
+    <AnimatePresence mode="wait">
+      {outlet && (
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, filter: "blur(12px)" }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {outlet}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function App() {
   return (
     <LayoutGroup>
-      <Outlet />
+      <AnimatedOutlet />
     </LayoutGroup>
   );
 }
