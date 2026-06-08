@@ -183,7 +183,7 @@ export default function Home() {
                 href="mailto:giuliano@netc.fr"
                 className="text-neutral-400 hover:text-white transition-colors"
               >
-                giuliano@netc.fr
+                giuliano@poke.com
               </a>
             </p>
           </div>
