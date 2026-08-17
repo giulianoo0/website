@@ -9,6 +9,20 @@ const projects = [
     url: "https://github.com/giulianoo0/website",
     icon: "🖥️",
   },
+  {
+    name: "pintr",
+    description:
+      "mcp server that generates images and videos using your own logins, no api keys.",
+    url: "https://pintr.giuli.dev",
+    icon: "🎨",
+  },
+  {
+    name: "ss",
+    description:
+      "watch videos together with friends. upload a file, share a link, gone in 5 hours.",
+    url: "https://ss.giuli.dev",
+    icon: "📺",
+  },
 ];
 
 const posts = [
@@ -137,10 +151,10 @@ export default function Home() {
               <p>
                 contact me at{" "}
                 <a
-                  href="mailto:giuliano@netc.fr"
+                  href="mailto:hi@giuli.dev"
                   className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  giuliano@netc.fr
+                  hi@giuli.dev
                 </a>
               </p>
             </div>
@@ -180,10 +194,10 @@ export default function Home() {
             <p>
               contact me at{" "}
               <a
-                href="mailto:giuliano@netc.fr"
+                href="mailto:hi@giuli.dev"
                 className="text-neutral-400 hover:text-white transition-colors"
               >
-                giuliano@poke.com
+                hi@giuli.dev
               </a>
             </p>
           </div>
