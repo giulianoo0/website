@@ -3,26 +3,26 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    name: "website",
-    description:
-      "personal website and blog built with react router, mdx, and recharts.",
-    url: "https://github.com/giulianoo0/website",
-    icon: "🖥️",
-  },
-  {
     name: "pintr",
     description:
-      "mcp server that generates images and videos using your own logins, no api keys.",
+      "mcp server that generates images and videos using plan quotas instead of api billing.",
     url: "https://pintr.giuli.dev",
     icon: "🎨",
   },
   {
     name: "ss",
     description:
-      "watch videos together with friends. upload a file, share a link, gone in 5 hours.",
+      "watch videos together with friends. stream a file, share a link, everyone gets synced",
     url: "https://ss.giuli.dev",
     icon: "📺",
   },
+{
+    name: "website",
+    description:
+      "personal website and blog built with react router, mdx, and recharts.",
+    url: "https://github.com/giulianoo0/website",
+    icon: "🖥️",
+  }
 ];
 
 const posts = [
